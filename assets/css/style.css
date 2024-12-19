@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #333333; /* Dark gray for text */
+    --color-heading: #000000; /* Black for headings */
+    --color-base: #FFFFFF; /* White for background */
+    --color-base2: #f7f7f7; /* Light gray for secondary background */
+    --color-brand: #007AFF; /* Blue for accents */
+    --color-brand2: #005BB5; /* Darker blue for hover states */
+    --sidebar-width: 240px;
+    --font-base: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-base);
+    color: var(--color-body);
+    font-family: var(--font-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+    height: auto; /* Ensure images maintain their aspect ratio */
+}
+
+.text-brand {
+    color: var(--color-brand);
+}
+
+.bg-base {
+    background-color: var(--color-base2);
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.shadow-effect {
+    transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand);
+    color: var(--color-base);
+    border-radius: 50%;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--color-base2);
+}
+
+.navbar .nav-link {
+    font-weight: 500;
+    color: var(--color-body);
+}
+
+.navbar .nav-link:hover, .navbar .nav-link.active {
+    color: var(--color-brand);
+}
+
+.navbar-brand span {
+    color: #000; /* Black color */
+    font-family: var(--font-base);
+    font-weight: 700; /* Bold font */
+}
+
+/* Style for the navbar toggler button */
+.navbar-toggler {
+    border-color: #000; /* Black border */
+}
+
+/* Style for the navbar toggler icon (the three lines) */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsive Navbar */
+@media (min-width: 992px) {
+    .navbar {
+        min-height: 100vh;
+        width: var(--sidebar-width);
+        background-color: var(--color-base2);
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Content wrapper */
+    #content-wrapper {
+        padding-left: var(--sidebar-width);
+    }
+
+    .navbar .nav-link {
+        font-weight: 500;
+        color: var(--color-body);
+    }
+
+    .navbar .nav-link:hover, .navbar .nav-link.active {
+        color: var(--color-brand);
+    }
+
+    .navbar-brand span {
+        color: #000; /* Black color */
+        font-family: var(--font-base);
+        font-weight: 700; /* Bold font */
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+
+/* Button styles */
+.btn {
+    padding: 12px 28px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border: none;
+    color: var(--color-base);
+}
+
+.btn-brand:hover, .btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: var (--color-base);
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s;
+}
+
+.link-custom:hover::after {
+    width: 100%;
+}
+
+/* CARD */
+.card-custom .card-custom-image {
+    overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+    transition: transform 0.4s ease;
+}
+
+.link-custom:hover .card-custom-image img {
+    transform: scale(1.05);
+}
+
+/* CONTACT */
+#contact .form-control {
+    background-color: var(--color-base2);
+    border-color: var(--color-base2);
+    color: var(--color-body);
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: none;
+}
+
+#contact .form-control::placeholder {
+    color: var(--color-body);
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
+/* SOCIAL ICONS */
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-base2);
+    border-radius: 50%;
+    font-size: 24px;
+    color: var(--color-body);
+}
+
+.social-icons a:hover {
+    background-color: var(--color-brand);
+    color: var(--color-base);
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.carousel-item img, .carousel-item video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh; /* Adjust to fit within the viewport height */
+    object-fit: contain; /* Ensures the content maintains aspect ratio and is contained within the container */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
