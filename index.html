@@ -544,7 +544,8 @@
           </div>
 
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
-            <form action="https://your-backend-url.com/api/contact" method="POST" class="row g-lg-3 gy-3" id="contactForm">
+            <form action="https://portfolio-nfsx.onrender.com/api/contact" method="POST" class="row g-lg-3 gy-3"
+              id="contactForm">
               <div class="form-group col-md-6">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
@@ -584,6 +585,7 @@
         </div>
 
         <script>
+          const backendURL = 'https://portfolio-nfsx.onrender.com/api/contact';
           document.getElementById('contactForm').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent default form submission
 
@@ -591,7 +593,7 @@
             const data = Object.fromEntries(formData.entries());
 
             try {
-              const response = await fetch(event.target.action, {
+              const response = await fetch(backendURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -599,12 +601,10 @@
 
               if (response.ok) {
                 const result = await response.json();
-                console.log('Success:', result);
                 alert(result.message); // Success message
                 event.target.reset(); // Reset form
               } else {
                 const error = await response.json();
-                console.error('Error Response:', error);
                 alert(`Error: ${error.error}`); // Show error message
               }
             } catch (error) {

@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // Dynamic CORS settings based on environment
 const allowedOrigins = [
   'http://192.168.1.233:8080', // Local frontend URL
-  'https://your-frontend-service-name.onrender.com', // Deployed frontend URL
+  'https://portfolio-1-1q29.onrender.com', // Deployed frontend URL
 ];
 app.use(
   cors({
