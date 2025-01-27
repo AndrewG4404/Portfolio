@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 :root {
-    --color-body: #333333; /* Dark gray for text */
-    --color-heading: #000000; /* Black for headings */
-    --color-base: #FFFFFF; /* White for background */
-    --color-base2: #f7f7f7; /* Light gray for secondary background */
-    --color-brand: #007AFF; /* Blue for accents */
-    --color-brand2: #005BB5; /* Darker blue for hover states */
+    --color-body: #333333;
+    /* Dark gray for text */
+    --color-heading: #000000;
+    /* Black for headings */
+    --color-base: #FFFFFF;
+    /* White for background */
+    --color-base2: #f7f7f7;
+    /* Light gray for secondary background */
+    --color-brand: #007AFF;
+    /* Blue for accents */
+    --color-brand2: #005BB5;
+    /* Darker blue for hover states */
     --sidebar-width: 240px;
     --font-base: "Helvetica Neue", Arial, sans-serif;
 }
@@ -17,7 +23,12 @@ body {
     font-family: var(--font-base);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: var(--color-heading);
     font-weight: 700;
 }
@@ -34,7 +45,8 @@ a:hover {
 
 img {
     width: 100%;
-    height: auto; /* Ensure images maintain their aspect ratio */
+    height: auto;
+    /* Ensure images maintain their aspect ratio */
 }
 
 .text-brand {
@@ -85,19 +97,23 @@ img {
     color: var(--color-body);
 }
 
-.navbar .nav-link:hover, .navbar .nav-link.active {
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
     color: var(--color-brand);
 }
 
 .navbar-brand span {
-    color: #000; /* Black color */
+    color: #000;
+    /* Black color */
     font-family: var(--font-base);
-    font-weight: 700; /* Bold font */
+    font-weight: 700;
+    /* Bold font */
 }
 
 /* Style for the navbar toggler button */
 .navbar-toggler {
-    border-color: #000; /* Black border */
+    border-color: #000;
+    /* Black border */
 }
 
 /* Style for the navbar toggler icon (the three lines) */
@@ -118,21 +134,6 @@ img {
     /* Content wrapper */
     #content-wrapper {
         padding-left: var(--sidebar-width);
-    }
-
-    .navbar .nav-link {
-        font-weight: 500;
-        color: var(--color-body);
-    }
-
-    .navbar .nav-link:hover, .navbar .nav-link.active {
-        color: var(--color-brand);
-    }
-
-    .navbar-brand span {
-        color: #000; /* Black color */
-        font-family: var(--font-base);
-        font-weight: 700; /* Bold font */
     }
 }
 
@@ -163,109 +164,116 @@ img {
     color: var(--color-base);
 }
 
-.btn-brand:hover, .btn-brand:focus {
+.btn-brand:hover,
+.btn-brand:focus {
     background-color: var(--color-brand2);
-    color: var (--color-base);
-}
-
-.link-custom {
-    font-weight: 700;
-    position: relative;
-}
-
-.link-custom::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background-color: var(--color-brand);
-    position: absolute;
-    left: 0;
-    top: 110%;
-    transition: all 0.4s;
-}
-
-.link-custom:hover::after {
-    width: 100%;
-}
-
-/* CARD */
-.card-custom .card-custom-image {
-    overflow: hidden;
-}
-
-.card-custom .card-custom-image img {
-    transition: transform 0.4s ease;
-}
-
-.link-custom:hover .card-custom-image img {
-    transform: scale(1.05);
-}
-
-/* CONTACT */
-#contact .form-control {
-    background-color: var(--color-base2);
-    border-color: var(--color-base2);
-    color: var(--color-body);
-}
-
-#contact .form-control:focus {
-    border-color: var(--color-brand);
-    box-shadow: none;
-}
-
-#contact .form-control::placeholder {
-    color: var(--color-body);
-}
-
-#contact input.form-control {
-    height: 44px;
-}
-
-/* SOCIAL ICONS */
-.social-icons a {
-    width: 40px;
-    height: 40px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-base2);
-    border-radius: 50%;
-    font-size: 24px;
-    color: var(--color-body);
-}
-
-.social-icons a:hover {
-    background-color: var(--color-brand);
     color: var(--color-base);
 }
 
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .call-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .call-container .btn {
+        margin-bottom: 10px;
+    }
+
+    .call-container .link-custom {
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+}
+
+ul {
+    padding-left: 1rem;
+}
+
+ul li {
+    list-style-position: inside;
+    line-height: 1.5;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-base2);
+    text-align: center;
+}
+
+/* Enlarge social media icons */
+.social-icons a {
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    /* Increase icon size */
+    background-color: var(--color-brand);
+    border-radius: 50%;
+    color: var(--color-base);
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.social-icons a:hover {
+    background-color: var(--color-brand2);
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        margin: 0 6px;
+    }
+}
+
 .map-responsive {
-    overflow: hidden;
-    padding-bottom: 56.25%;
     position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio for responsive scaling */
     height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f7f7f7;
 }
 
 .map-responsive iframe {
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
     position: absolute;
-}
-
-.carousel-item img, .carousel-item video {
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 100vh; /* Adjust to fit within the viewport height */
-    object-fit: contain; /* Ensures the content maintains aspect ratio and is contained within the container */
+    height: 100%;
+    border: 0;
 }
-
-.carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-}
-
-
