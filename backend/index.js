@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 // Dynamic CORS settings based on environment
 const allowedOrigins = [
   'http://192.168.1.233:8080', // Local frontend URL
-  'https://your-frontend-service-name.onrender.com', // Deployed frontend URL
+  'https://portfolio-1-1q29.onrender.com', // Deployed frontend URL
 ];
 app.use(
   cors({
@@ -30,10 +30,7 @@ app.use(
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch((err) => console.error('MongoDB Connection Error:', err));
 

@@ -198,7 +198,7 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card-custom rounded-4 bg-base shadow-effect">
               <div class="card-custom-image rounded-4">
-                <img class="rounded-4" src="assets/images/eventviewer.png" alt="Static Analysis Tool">
+                <img class="rounded-4" src="assets/images/Static_IMG.png" alt="Static Analysis Tool">
               </div>
               <div class="card-custom-content p-4">
                 <h4>Static Analysis Tool</h4>
@@ -219,7 +219,7 @@
           <div class="col-md-6" data-aos="fade-up">
             <div class="card-custom rounded-4 bg-base shadow-effect">
               <div class="card-custom-image rounded-4">
-                <img class="rounded-4" src="assets/images/trading.png" alt="Cybersecurity AI Model">
+                <img class="rounded-4" src="assets/images/Cyber_IMG.png" alt="Cybersecurity AI Model">
               </div>
               <div class="card-custom-content p-4">
                 <h4>Advanced Cybersecurity AI Threat Detection Model</h4>
@@ -240,7 +240,7 @@
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card-custom rounded-4 bg-base shadow-effect">
               <div class="card-custom-image rounded-4">
-                <img class="rounded-4" src="assets/images/eventviewer.png" alt="Parent-Teacher Platform">
+                <img class="rounded-4" src="assets/images/Parent_IMG.png" alt="Parent-Teacher Platform">
               </div>
               <div class="card-custom-content p-4">
                 <h4>Parent-Teacher Communication Platform</h4>
@@ -569,8 +569,10 @@
             <h1>Interested in working together? Let's talk</h1>
           </div>
 
+
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <form action="https://your-backend-url.com/api/contact" method="POST" class="row g-lg-3 gy-3"
+            <form action="https://portfolio-nfsx.onrender.com/api/contact" method="POST" class="row g-lg-3 gy-3"
+
               id="contactForm">
               <div class="form-group col-md-6">
                 <label for="name" class="form-label">Name</label>
@@ -610,6 +612,7 @@
         </div>
 
         <script>
+          const backendURL = 'https://portfolio-nfsx.onrender.com/api/contact';
           document.getElementById('contactForm').addEventListener('submit', async (event) => {
             event.preventDefault(); // Prevent default form submission
 
@@ -617,7 +620,7 @@
             const data = Object.fromEntries(formData.entries());
 
             try {
-              const response = await fetch(event.target.action, {
+              const response = await fetch(backendURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
@@ -625,12 +628,10 @@
 
               if (response.ok) {
                 const result = await response.json();
-                console.log('Success:', result);
                 alert(result.message); // Success message
                 event.target.reset(); // Reset form
               } else {
                 const error = await response.json();
-                console.error('Error Response:', error);
                 alert(`Error: ${error.error}`); // Show error message
               }
             } catch (error) {
@@ -649,7 +650,9 @@
       <div class="container">
         <div class="row gy-4 justify-content-between align-items-center text-center">
           <div class="col-auto">
+
             <p class="mb-0">Thank you for visiting my website!</p>
+
           </div>
           <div class="col-auto">
             <div class="social-icons">
